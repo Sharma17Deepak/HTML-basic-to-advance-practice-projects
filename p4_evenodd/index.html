@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<style> *{font-size: 60px} body{ background-color: darkslategrey; color: bisque;}</style>
+		<title> Even Odd App </title>
+		<script>
+			function find()
+			{	
+				let num =document.getElementById("num")
+				let ans =document.getElementById("ans")
+				
+				//validations
+				if(num.value === "")
+				{
+					alert("empty input")
+					num.focus()
+					ans.innerHTML=""
+					return
+				}
+				if(! num.value.match(/^[-0-9]+$/))
+				{
+					alert("integers only")
+					ans.innerHTML=""
+					num.focus()
+					num.value=""
+					return
+				}
+
+				let n =parseInt(num.value)
+				let res= n % 2 ==0 ? "even" : "odd"
+				let msg= "num "+ n +" is "+res
+				ans.innerHTML = msg
+			}
+		</script>
+	</head>
+
+	<body>
+	  <center>
+		<h1> Even Odd App </h1>
+		<input type="number" placeholder="enter an integer" id="num"/>
+		<br><br/>
+		<input type="submit" value="Find" onclick="find()"  style="cursor: pointer;"/>
+		<br><br/>
+		<h2 id="ans"></h2>
+	  </center>
+	</body>
+</html>
