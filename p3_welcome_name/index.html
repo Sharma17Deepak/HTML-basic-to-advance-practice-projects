@@ -1,0 +1,55 @@
+<html>
+	<head>
+	    <style>
+		* { font-size:50px }
+		body{
+			background-color: darkslategrey;
+		}
+	    </style>	
+	    <title> Welcome by name </title>
+	</head>
+	<body>
+	    <center>
+		<h1 style= color:bisque;>Welcome app</h1>
+		<input type="text" placeholder="Enter name" id="name"/>
+		<br><br/>
+		<input type="submit" style="cursor: pointer;" onclick="welcome()" />
+		<h2 id="msg" style="color:bisque;"></h2>
+	    <script>
+		function welcome()
+		{
+			let name=document.getElementById("name")
+			let msg=document.getElementById("msg")
+			let d= new Date()
+			let hour=d.getHours()
+			let res=""
+			
+			
+			if(hour<12)           res="Good Morning !"
+			else if(hour<16)      res ="Good Afternoon !"	
+			else                res ="Good Evening !"
+
+			//validations
+			if(name.value == "")
+			{
+				alert("Name is Empty")  
+				name.focus()          //cursor will back to input
+				msg.innerHTML=""     //clear the msg output
+				return
+			}
+			if(!name.value.match(/^[A-Za-z]+( [A-Za-z]+)*$/))
+			{
+				alert("invalid name")
+				name.value=""
+				name.focus()
+				msg.innerHTML=""
+				return;
+
+			}			
+			let ans= "Welcome " + name.value + " " + res
+			msg.innerHTML=ans
+		}
+	    </script>
+	    </center>
+	</body>
+</html>
