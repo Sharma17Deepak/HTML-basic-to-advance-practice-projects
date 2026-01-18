@@ -1,0 +1,24 @@
+* {
+  font-size: 40px;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: lightblue;
+}
+h1 {
+  background-color: black;
+  color: white;
+  margin-bottom: 1rem;
+}
+h2 {
+  background-color: red;
+  color: yellow;
+}
+#btn{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: black;
+    color: aliceblue;
+    cursor: pointer;
+}
